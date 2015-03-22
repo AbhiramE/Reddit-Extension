@@ -1,2 +1,2 @@
 # Reddit-Extension
-Hola. This is an extension that lists the top posts from your reddit front page!
+Hola. This is a chrome extension that lists the top posts from your reddit front page!
