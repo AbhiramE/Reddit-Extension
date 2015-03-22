@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "Reddit on the go",
+  "description": "This extension lists the latest top posts from your subreddits",
+  "version": "1.0",
+
+  "browser_action": {
+
+    "default_icon": {                    
+            "19": "images/reddit.png",        
+            "38": "images/icon38.png"          
+          },
+
+    "default_title": "Top posts from your subreddits", 
+    "default_popup": "popup.html"
+  },
+
+  "background":
+  {
+    "scripts":["badge.js"]
+  },
+
+  "permissions": [
+    "cookies",
+    "activeTab",
+    "https://www.Reddit.com/"
+  ]
+}
