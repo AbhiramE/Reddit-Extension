@@ -5,8 +5,9 @@
   "description": "This extension lists the latest top posts from your subreddits",
   "version": "1.0",
   "options_page": "options.html",
+  
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [ "background.js" ]
   },
 
   "browser_action": {
@@ -20,10 +21,13 @@
     "default_popup": "popup.html"
   },
 
+  "web_accessible_resources": ["popup.html"],
+
   "permissions": [
-    "cookies",
+    "storage",
     "tabs",
-    "https://*.reddit.com/",
-    "http://*.reddit.com/"
+    "identity",
+    "https://*.reddit.com/*",
+    "http://*.reddit.com/*"
   ]
 }
