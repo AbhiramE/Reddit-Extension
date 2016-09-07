@@ -12,6 +12,7 @@ function main()
 		var response= JSON.parse(xhr.response);
 		console.log(response.data.children);
 		var children=response.data.children;
+		
 		document.addEventListener('DOMContentLoaded',function(){
 			var template=document.getElementById('content').innerHTML;
 			var render=Mustache.to_html(template,{title:children[0].data.title,
@@ -20,6 +21,12 @@ function main()
 			console.log(document);
 		});
 	}
-
 }
+
+window.addEventListener('click',function(e){
+  			if(e.target.href!==undefined){
+    		chrome.tabs.create({url:e.target.href})
+  	}
+
+});
 
