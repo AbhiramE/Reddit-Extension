@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded',main());
 
-
-
 function main()
 {
 	console.log("JS loaded.");
@@ -15,7 +13,6 @@ function main()
 		var children=response.data.children;
 		
 		document.addEventListener('DOMContentLoaded',function(){
-			
 			xhrTemplate=new XMLHttpRequest();
 			xhrTemplate.open("GET","templates/list.html",false);
 			xhrTemplate.send();
@@ -38,17 +35,19 @@ function main()
 								"score":children[4].data.score,"subreddit":children[4].data.subreddit,
 								"comments":children[4].data.permalink}
 						]};
-			var render=Mustache.to_html(template,json);
-			document.getElementById("items").innerHTML=render;
+			var template=document.getElementById('content').innerHTML;
+			var render=Mustache.to_html(template,{title:children[0].data.title,
+				url:children[0].data.url});
+			document.getElementById("content").innerHTML=render;
+			console.log(document);
 		});
 	}
 }
 
 window.addEventListener('click',function(e){
-			if(e.id=="comments"){
-				console.log("Fi")
-				//chrome.tabs.create({url:"reddit.com"+e.target.href})
-			}
-  			else if(e.target.href!==undefined){
-    			chrome.tabs.create({url:e.target.href})}
+  			if(e.target.href!==undefined){
+    		chrome.tabs.create({url:e.target.href})
+  	}
+
 });
+
