@@ -1,9 +1,17 @@
 <html>
-<head lang="en">
-<script type="text/javascript" src="scripts/mustache.js"></script>
-<script id="frontPage" src="scripts/popup.js"></script>
-</head>
-<body id="content">
-	<a href={{url}}>{{title}}</a>
-</body>
+	<head lang="en">
+		<script type="text/javascript" src="scripts/mustache.js"></script>
+		<script id="frontPage" src="scripts/popup.js"></script>
+		<link href="css/popup.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="content">
+		<div>
+			<a class="logo" href="http://www.reddit.com/">
+			<img src="images/logo.png" border="0" height="70" width="350"/>
+			</a>
+		</div>
+		<div id="items">
+			<p><a href={{url}}>{{title}}</a></p>
+		</div>
+	</body>
 </html>
